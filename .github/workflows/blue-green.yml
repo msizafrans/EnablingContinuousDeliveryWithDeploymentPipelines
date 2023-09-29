@@ -70,3 +70,6 @@ jobs:
         run: |
           terraform apply -var='live_environment=blue' -auto-approve
           echo "Switched live traffic to Blue environment"
+
+      - name: Terraform Destroy
+        run:  terraform plan -destroy
