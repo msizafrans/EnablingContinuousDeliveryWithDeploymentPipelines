@@ -2,7 +2,7 @@ name: 'Terraform Blue-Green Deployment'
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   AWS_REGION: us-east-1     # Update this to your AWS Region
