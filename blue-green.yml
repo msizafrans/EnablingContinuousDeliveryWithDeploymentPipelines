@@ -1,0 +1,54 @@
+name: 'Terraform Blue-Green Deployment'
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-east-1
+  TF_ACTION_WORKING_DIR: 'terraform' 
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest   # Use the latest Ubuntu runner
+
+    steps:
+      # Check out the code to the runner
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Set up the specified version of Terraform
+      - name:
+      
+      # Initialize your Terraform configuration
+      - name: 
+
+      # Validate your Terraform configuration
+      - name: 
+
+      # Generate and display an execution plan
+      - name: 
+      # Apply the changes required to reach the desired state of the configuration
+      - name: 
+
+      # Check the status of the Blue environment (pseudo-code)
+      - name:
+
+      # Check the status of the Green environment (pseudo-code)
+      - name: 
+
+      # Switch traffic to the Green environment if the Blue environment is currently live (pseudo-code)
+      - name: 
+
+      # Switch traffic to the Blue environment if the Green environment is currently live (pseudo-code)
+      - name: 
